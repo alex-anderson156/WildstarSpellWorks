@@ -24,8 +24,9 @@ Tier:   {_Spell.tierIndex}
 Duration: {_Spell.spellDuration}
 CastTime: {_Spell.castTime}ms
 Tooltip-CastTime: {_Spell.tooltipCastTime}ms
-                
-
+           
+Range:  {_Spell.targetMinRange} - {_Spell.targetMaxRange}
+V-Range:{_Spell.targetVerticalRange}
 
             "; }
         }

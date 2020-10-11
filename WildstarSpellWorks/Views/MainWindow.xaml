@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WildstarSpellWorks"
         xmlns:uc="clr-namespace:WildstarSpellWorks.Views.UserControls"
-        mc:Ignorable="d"        
-        Title="Wildstar Spellwork" Height="600" Width="1200">    
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen"
+        Title="Wildstar Spellwork" Height="600" Width="1200">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto" />

@@ -13,6 +13,8 @@ namespace WildstarSpellWorks.ViewModels
     public interface IApplyFiltersAndSearch
     {
         void ApplyFilters(int? id);
+
+        void ClearFilters();
     }
 
     public class SpellDatabaseDataContext : DataContextBase, IApplyFiltersAndSearch
@@ -62,10 +64,14 @@ namespace WildstarSpellWorks.ViewModels
                 _SpellDictionary.Add(datum.ID, datum);
             }
 
-            SpellsForCurrentFilter = new ObservableCollection<Spell4ViewModel>(_SpellDictionary.Values.Select(s => new Spell4ViewModel(s)));
+            ClearFilters();
         }
 
 
+        public void ClearFilters()
+        {
+            SpellsForCurrentFilter = new ObservableCollection<Spell4ViewModel>(_SpellDictionary.Values.Select(s => new Spell4ViewModel(s)));
+        }
 
         public void ApplyFilters(int? id)
         {

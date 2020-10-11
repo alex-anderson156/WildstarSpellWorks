@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WildstarSpellWorks.Views.UserControls"
-             mc:Ignorable="d" d:Width="600" d:Height="200" d:Background="White">
+             mc:Ignorable="d" d:Width="1200" d:Height="200" d:Background="White">
     <Grid Margin="5px">
         <Grid.ColumnDefinitions> 
             <ColumnDefinition Width="*" /> 
@@ -24,10 +24,10 @@
             <TextBox Text="{Binding IDToFilter, Mode=TwoWay}" Width="64px" HorizontalAlignment="Left" />
         </StackPanel>
 
-
-
-        <StackPanel Grid.Row="4" Grid.Column="3" VerticalAlignment="Bottom" HorizontalAlignment="Right">
-            <Button Content="Apply" VerticalAlignment="Center" HorizontalAlignment="Center" Width="84px" Command="{Binding ApplyFiltersCommand}"/>
+        <StackPanel Grid.Row="4" Grid.Column="3"  HorizontalAlignment="Right" VerticalAlignment="Bottom">
+            <Button Content="Clear Filters" Width="124px" Command="{Binding ClearFiltersCommand}" Margin="1px" />
+            <Button Content="Apply Filters" Width="124px" Command="{Binding ApplyFiltersCommand}" Margin="1px"/>
+            
         </StackPanel>
 
     </Grid>
