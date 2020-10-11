@@ -1,0 +1,36 @@
+﻿<Window x:Class="WildstarSpellWorks.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WildstarSpellWorks"
+        xmlns:uc="clr-namespace:WildstarSpellWorks.Views.UserControls"
+        mc:Ignorable="d"        
+        Title="Wildstar Spellwork" Height="600" Width="1200">    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        
+        <DockPanel Grid.Row="0">
+            <Menu DockPanel.Dock="Top">
+                <MenuItem Header="File">
+                    <MenuItem Header="Read Data" Command="{Binding ReadDataCommand}"/>
+                    <Separator />
+                    <MenuItem Header="Exit" Command="{Binding CloseApplicationCommand}" />
+                </MenuItem>
+            </Menu>
+        </DockPanel>
+        
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            
+            <uc:SpellSearch     Grid.Row="0"    DataContext="{Binding SpellSearchDataContext}" />
+            <uc:SpellDatabase   Grid.Row="1"    DataContext="{Binding SpellDatabaseDataContext}" /> 
+        </Grid>
+    </Grid>
+</Window>
