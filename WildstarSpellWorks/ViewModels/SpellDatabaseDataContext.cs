@@ -12,7 +12,7 @@ namespace WildstarSpellWorks.ViewModels
 {
     public interface IApplyFiltersAndSearch
     {
-        void ApplyFilters(int? id);
+        void ApplyFilters(int? id, string descriptionToFilter);
 
         void ClearFilters();
     }
@@ -73,17 +73,27 @@ namespace WildstarSpellWorks.ViewModels
             SpellsForCurrentFilter = new ObservableCollection<Spell4ViewModel>(_SpellDictionary.Values.Select(s => new Spell4ViewModel(s)));
         }
 
-        public void ApplyFilters(int? id)
-        {
+        public void ApplyFilters(int? id, string descriptionToFilter)
+        { 
             if (id != null && id > 0)
-            {
-                this._SpellsForCurrentFilter.Clear();
+            {               
                 _SpellDictionary.TryGetValue(id.Value, out Spell4 spell);
 
                 if (spell != null) {
                     this.SpellsForCurrentFilter = new ObservableCollection<Spell4ViewModel>(new Spell4ViewModel[] { new Spell4ViewModel(spell) });
                     this.SelectedSpell = this.SpellsForCurrentFilter.First();
                 }
+            }
+            else
+            {
+                this.ClearFilters();
+            }
+
+            if (!String.IsNullOrEmpty(descriptionToFilter))
+            {
+                this.SpellsForCurrentFilter = new ObservableCollection<Spell4ViewModel>(
+                    this._SpellsForCurrentFilter.Where(s =>s.Spell.description.Contains(descriptionToFilter))
+                );
             }
         }
     }

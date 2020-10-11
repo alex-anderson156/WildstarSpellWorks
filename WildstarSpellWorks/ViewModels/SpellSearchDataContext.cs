@@ -23,6 +23,16 @@ namespace WildstarSpellWorks.ViewModels
             }
         }
 
+        private string _DescriptionToFilter;
+        /// <summary>
+        /// Gets or sets the 
+        /// </summary>
+        public string DescriptionToFilter
+        {
+            get { return _DescriptionToFilter; }
+            set { _DescriptionToFilter = value; }
+        }
+         
         private ICommand _ApplyFiltersCommand;
         /// <summary>
         /// Gets or sets the Apply Filters Command
@@ -56,11 +66,13 @@ namespace WildstarSpellWorks.ViewModels
 
         private void ApplyFilters()
         {
-            _IFilterContext.ApplyFilters(this._IDToFilter);
+            _IFilterContext.ApplyFilters(this._IDToFilter, this._DescriptionToFilter);
         }
 
         private void ClearFilters()
         {
+            this.IDToFilter = 0;
+            this.DescriptionToFilter = string.Empty;
             _IFilterContext.ClearFilters();
         }
     }

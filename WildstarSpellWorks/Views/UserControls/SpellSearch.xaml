@@ -24,6 +24,11 @@
             <TextBox Text="{Binding IDToFilter, Mode=TwoWay}" Width="64px" HorizontalAlignment="Left" />
         </StackPanel>
 
+        <StackPanel Grid.Row="1" Grid.Column="0">
+            <Label  Content="Description" />
+            <TextBox Text="{Binding DescriptionToFilter, Mode=TwoWay}"/>
+        </StackPanel>
+
         <StackPanel Grid.Row="4" Grid.Column="3"  HorizontalAlignment="Right" VerticalAlignment="Bottom">
             <Button Content="Clear Filters" Width="124px" Command="{Binding ClearFiltersCommand}" Margin="1px" />
             <Button Content="Apply Filters" Width="124px" Command="{Binding ApplyFiltersCommand}" Margin="1px"/>

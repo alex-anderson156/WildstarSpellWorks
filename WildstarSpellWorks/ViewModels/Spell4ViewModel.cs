@@ -9,6 +9,7 @@ namespace WildstarSpellWorks.ViewModels
     {
         private Spell4 _Spell;
 
+        public Spell4 Spell { get => _Spell; }
 
         public string DisplayText
         {
@@ -21,12 +22,16 @@ namespace WildstarSpellWorks.ViewModels
 Name:   {_Spell.description }
 Tier:   {_Spell.tierIndex}
 
-Duration: {_Spell.spellDuration}
-CastTime: {_Spell.castTime}ms
-Tooltip-CastTime: {_Spell.tooltipCastTime}ms
+Duration:           {_Spell.spellDuration}
+CastTime:           {_Spell.castTime}ms
+Tooltip-CastTime:   {_Spell.tooltipCastTime}ms
            
-Range:  {_Spell.targetMinRange} - {_Spell.targetMaxRange}
-V-Range:{_Spell.targetVerticalRange}
+Range:      {_Spell.targetMinRange} - {_Spell.targetMaxRange}
+V-Range:    {_Spell.targetVerticalRange}
+
+Channel Initial Delay:  {_Spell.channelInitialDelay}
+Channel Max Time:       {_Spell.channelMaxTime}
+Channel Pulse Time:     {_Spell.channelPulseTime}
 
             "; }
         }
